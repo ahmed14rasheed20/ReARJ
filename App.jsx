@@ -5,36 +5,36 @@ export default function App() {
   const [text, setText] = useState("");
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", maxWidth: 600, margin: "40px auto" }}>
-      <h1 style={{ textAlign: "center" }}>Beginner React useState Project</h1>
+    <div className="container">
+      <h2 className="title">Beginner React useState Project</h2>
+       <h1 className="title">Ahmad Rasheed Jamhour</h1> 
 
-      {/* Counter */}
-      <section style={{ padding: 16, border: "1px solid #ddd", borderRadius: 12, marginBottom: 24 }}>
+
+      <section className="card">
         <h2>Counter</h2>
-        <p style={{ fontSize: 20, margin: "8px 0" }}>
-          Current Count: <strong>{count}</strong>
-        </p>
-        <div>
-          <button onClick={() => setCount(c => c + 1)} style={{ marginRight: 8 }}>Increase</button>
-          <button onClick={() => setCount(c => c - 1)} style={{ marginRight: 8 }}>Decrease</button>
-          <button onClick={() => setCount(0)}>Reset</button>
+        <p className="count">Current Count: <strong>{count}</strong></p>
+        <div className="stack">
+          <button className="btn" onClick={() => setCount(c => c + 1)}>Increase</button>
+          <button className="btn secondary" onClick={() => setCount(c => c - 1)}>Decrease</button>
+          <button className="btn warning" onClick={() => setCount(0)}>Reset</button>
         </div>
       </section>
 
-      {/* Input Tracker */}
-      <section style={{ padding: 16, border: "1px solid #ddd", borderRadius: 12 }}>
+      <section className="card">
         <h2>Input Tracker</h2>
+        <p className="p-sm">Type anything and watch it update instantly.</p>
         <input
+          className="input"
           type="text"
           placeholder="Type your name..."
           value={text}
           onChange={(e) => setText(e.target.value)}
-          style={{ padding: 8, width: "100%", maxWidth: 320 }}
         />
-        <p style={{ marginTop: 12 }}>
-          You typed: <strong>{text || "—"}</strong>
-        </p>
+        <hr className="hr" />
+        <p>You typed: <strong>{text || "—"}</strong></p>
       </section>
+
+      <p className="footer">Made with ❤️ using <code>useState</code></p>
     </div>
   );
 }
